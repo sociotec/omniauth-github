@@ -3,6 +3,8 @@ require 'omniauth-oauth2'
 module OmniAuth
   module Strategies
     class GitHub < OmniAuth::Strategies::OAuth2
+      option :authorize_options, [:scope, :state]
+
       option :client_options, {
         :site => 'https://api.github.com',
         :authorize_url => 'https://github.com/login/oauth/authorize',
